@@ -15,9 +15,9 @@ import p11_img from "./product_17.png";
 import p12_img from "./product_28.png";
 
 // Footer
-import facebook from './facebook.svg'
-import instagram from './instagram.svg'
-import twitter from './twitter.svg'
+import vk from './vk.svg'
+import telegram from './telegram.svg'
+import whatsapp from './whatsapp.svg'
 import youtube from './youtube.svg'
 import linkedin from './linkedin.svg'
 
@@ -144,9 +144,9 @@ export const FOOTER_CONTACT_INFO = {
 export const SOCIALS = {
   title: "Social",
   links: [
-    facebook,
-    instagram,
-    twitter,
+    vk,
+    telegram,
+    whatsapp,
     youtube,
     linkedin,
   ],
