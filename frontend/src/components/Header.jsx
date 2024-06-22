@@ -19,7 +19,7 @@ const Header = () => {
             <div className="px-4 flexBetween py-3 max-xs:px-2">
                 {/*logo*/}
                 <div>
-                    <Link><img src={logo} alt="" height={66} width={88} /></Link>
+                    <Link to={"/"}><img src={logo} alt="" height={66} width={88} /></Link>
                 </div>
                 {/* NavBar Desktop*/}
                 <NavBar containerStyles={"hidden md:flex gap-x-5 xl:gap-x-10 medium-15"} />
