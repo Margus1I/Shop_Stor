@@ -1,5 +1,3 @@
-// import CartItems from "../components/CartItems"
-
 import CartItems from "../components/CartItems"
 
 const Cart = () => {

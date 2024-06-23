@@ -7,7 +7,7 @@ const CartItems = () => {
     const { getTotalCartAmount, all_products, cartItems, removeFromCart } = useContext(ShopContext);
 
     return (
-        <section className='max_padd_contain pt-28'>
+        <section className='max_padd_container pt-28'>
             <table className='w-full mx-auto'>
                 <thead>
                     <tr className='bg-slate-900/10 regular-18 sm:regular-22 text-start py-12'>
