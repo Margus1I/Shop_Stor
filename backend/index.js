@@ -101,6 +101,23 @@ app.post('/addproduct', async(req, res) => {
     })
 })
 
+// Create api for add products
+app.post('/removeproduct', async(req, res) => {
+    await Product.findOneAndDelete({id:req.body.id});
+    console.log("Removde");
+    res.json({
+        succes: true,
+        name: req.body.name,
+    })
+})
+
+// Create api for get all products
+app.get('/allproducts', async (req, res) => {
+    let products = await Product.find({});
+        console.log("All products Fetched");
+        res.send(products);
+})
+
 app.listen(port, (error) => {
     if (!error) {
         console.log("Server is running on port" + port);
