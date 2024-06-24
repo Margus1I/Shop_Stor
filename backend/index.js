@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const { error } = require("console");
+// const { error } = require("console");
 
 app.use(express.json());
 app.use(cors());
@@ -169,11 +169,11 @@ app.post('/signup', async (req, res) => {
 })
 
 // create endpoint for user login
-app.post('/login', async (req, res)=> {
+app.post('/login', async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
     if (user) {
         const passMatch = req.body.password === user.password;
-        if(passMatch){
+        if (passMatch) {
             const data = {
                 user: {
                     id: user.id
@@ -187,7 +187,22 @@ app.post('/login', async (req, res)=> {
     } else {
         res.json({ success: false, errors: "Wrong Email address" })
     }
+})
 
+// create endpoint for latestproducts
+app.get('/newcollections', async(req, res) => {
+    let products = await Product.find({});
+    let newcollection = products.slice(1).slice(-8);
+    console.log("NewCollection Fetched")
+    res.send(newcollection);
+})
+
+// create endpoint for popular products
+app.get('/popularporducts', async (req, res) => {
+    let products = await Product.find({category: "men"});
+    let popularporducts = products.slice(0, 4);
+    console.log("Popular products Fetched");
+    res.send(popularporducts);
 })
 
 app.listen(port, (error) => {
